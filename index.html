@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading Animation Example</title>
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/scripts/tailwind.js"></script>
+
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<style>
+  @layer utilities {
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  }
+</style>
+
+<body class="bg-white">
+ 
+ 
+  <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+  <div id="mainContent" class="opacity-0 transition-opacity duration-1000 ease-in">
+  
+    <header class="flex justify-between items-center px-4 py-3 border-b shadow-sm">
+     
+      <div>
+      <img src="/img/logo.jpeg" alt="Logo" class="h-12 w-12 rounded-full object-cover logo-circle">
+
+      </div>
+  
+      <div class="hidden md:block">
+        <button class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-md transition duration-300">
+          Login
+        </button>
+      </div>
+      
+  
+      <div class="block md:hidden relative">
+        <button id="profileIcon" 
+          class="text-gray-600 text-3xl p-2 rounded-full bg-white shadow-md hover:bg-blue-50 hover:text-blue-600 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2">
+          <i class="bi bi-person-circle"></i>
+        </button>
+      </div>
+      
+        
+  
+        
+        <div id="dropdownMenu" class="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md hidden">
+          <button class="w-full text-left px-4 py-2 hover:bg-gray-100">Login</button>
+        </div>
+      </div>
+    </header>
+  
+   
+    <section class="w-full px-6 md:px-16 py-12 bg-transparent">
+      <div class="grid md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+    
+       
+        <div class="text-center md:text-left space-y-6">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            HI, <span class="text-blue-600">Tech-Nest-User,</span> Welcome
+          </h1>
+          <div class="max-w-xl md:max-w-lg mx-auto md:mx-0 bg-white/5 border border-blue-600 rounded-xl p-6 backdrop-blur-md transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:rotate-x-6 hover:border-t-transparent hover:shadow-xl">
+            <p class="text-lg text-white leading-relaxed md:leading-loose font-medium text-center md:text-left">
+              <span class="text-blue-400 font-semibold">Tech-Nest</span> is your gateway to the future of innovation. We’re building a vibrant community where 
+              <span class="text-blue-300">creators</span>, <span class="text-blue-300">developers</span>, and <span class="text-blue-300">tech enthusiasts</span> 
+              connect, collaborate, and grow. Whether you’re launching your next big idea or exploring groundbreaking trends, Tech-Nest is the hub that nurtures your 
+              vision and turns <span class="italic text-blue-200">possibilities</span> into <span class="font-semibold text-white">progress</span>.
+            </p>
+          </div>
+          
+          <button class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-900 text-white font-semibold rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl active:scale-95">
+            Sign In
+          </button>
+        </div>
+    
+       
+        <div class="relative flex justify-center items-center mt-10 group">
+          
+          <img src="/img/Macbook-Air-technest-waitlist.vercel.app.png"
+               alt="Tech-Nest Laptop"
+               class="w-full max-w-2xl h-auto object-contain drop-shadow-2xl z-10 transform transition duration-500 ease-in-out group-hover:rotate-[-2deg] group-hover:scale-105" />
+    
+    
+          <img src="/img/iPhone-14-Plus-technest-waitlist.vercel.app.png"
+               alt="Revealing Image"
+               class="absolute right-8 bottom-6 w-24 md:w-32 object-contain drop-shadow-xl z-20 transform transition duration-500 ease-in-out group-hover:rotate-[6deg] group-hover:translate-x-2 group-hover:scale-110" />
+        </div>
+    
+      </div>
+    </section>
+    
+
+    
+  
+
+  <script src="/scripts/index.js"></script>
+ <script src="/scripts/tailwind.js"></script>
+  
+</body>
+</html>

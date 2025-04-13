@@ -1,0 +1,19 @@
+
+body{
+  background: linear-gradient(to  right, rgb(0, 0, 0), #010cde);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+.logo-circle {
+  border: 3px solid #3b82f6; 
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  object-fit: cover;
+}
+
+.logo-circle:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25); 
+  border-color: #2563eb; 
+}
