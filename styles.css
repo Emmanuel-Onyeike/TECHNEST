@@ -1,9 +1,11 @@
 
-body{
-  background: linear-gradient(to  right, rgb(0, 0, 0), #010cde);
+body {
+  background: radial-gradient(ellipse at top left, #0f0f0f, #000428 60%, #004e92);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white;
+  background-attachment: fixed;
+  color: white;
 }
+
 .logo-circle {
   border: 3px solid #3b82f6; 
   border-radius: 9999px;
@@ -16,4 +18,109 @@ body{
   transform: scale(1.07);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25); 
   border-color: #2563eb; 
+}
+body {
+
+  display:flex;
+  height: 270vh;
+  justify-content:center;
+	flex-direction: column; 
+	margin: 0;
+	padding: 0;
+  color: white;
+}
+
+
+.banner {
+  width: 100%;
+  height: 4em;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-container {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  right: 0;
+}
+
+.marquee-text {
+  display: flex;
+  gap: 1.5rem;
+  animation: marquee 15s linear infinite;
+  padding-left: 100%;
+  white-space: nowrap;
+}
+
+.marquee-text:hover {
+  animation-play-state: paused;
+}
+
+.marquee-word {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+  cursor: default;
+}
+
+.marquee-word:hover {
+  transform: scale(1.15) translateY(-2px);
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 183, 255, 0.5);
+  opacity: 1;
+}
+
+.dash {
+  font-size: 1.5rem;
+  color: #00cfff;
+  opacity: 0.6;
+  padding: 0 0.5rem;
+  transform: translateY(-1px);
+  transition: color 0.3s ease;
+}
+
+.dash:hover {
+  color: #ffffff;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .marquee-text {
+    gap: 1rem;
+  }
+
+  .marquee-word {
+    font-size: 1rem;
+  }
+
+  .dash {
+    font-size: 1.2rem;
+  }
+
+  body {
+    height: 457vh; /* Let the content define height */
+    overflow-y: auto; /* Ensure vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+  }
 }
