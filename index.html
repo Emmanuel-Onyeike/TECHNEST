@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loading Animation Example</title>
+  <title>TECH - NEST</title>
   
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -25,12 +27,21 @@
       50% { transform: translateY(-10px); }
     }
   }
+  body {
+ 
+  overflow-y: auto;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 </style>
 
-<body class="bg-white">
- 
+<body class="bg-white"> 
+    <div style="height: 3000px;"></div>
  
   <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+
     <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
       <span class="visually-hidden">Loading...</span>
     </div>
@@ -40,6 +51,7 @@
   <div id="mainContent" class="opacity-0 transition-opacity duration-1000 ease-in">
   
     <header class="flex justify-between items-center px-4 py-3 border-b shadow-sm">
+
      
       <div>
       <img src="/img/logo.jpeg" alt="Logo" class="h-12 w-12 rounded-full object-cover logo-circle">
@@ -47,18 +59,23 @@
       </div>
   
       <div class="hidden md:block">
-        <button class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-md transition duration-300">
+        <button
+          class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-md transition duration-300"
+          onclick="goToLogin()"
+        >
           Login
         </button>
       </div>
       
-  
       <div class="block md:hidden relative">
-        <button id="profileIcon" 
-          class="text-gray-600 text-3xl p-2 rounded-full bg-white shadow-md hover:bg-blue-50 hover:text-blue-600 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2">
+        <button id="profileIcon"
+          class="text-gray-600 text-3xl p-2 rounded-full bg-white shadow-md hover:bg-blue-50 hover:text-blue-600 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2"
+          onclick="goToProfile()"
+        >
           <i class="bi bi-person-circle"></i>
         </button>
       </div>
+      
       
         
   
@@ -87,9 +104,13 @@
             </p>
           </div>
           
-          <button class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-900 text-white font-semibold rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl active:scale-95">
-            Sign In
-          </button>
+          <button 
+          class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-900 text-white font-semibold rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl active:scale-95"
+          onclick="goToSignIn()"
+        >
+          Sign In
+        </button>
+        
         </div>
     
        
@@ -108,10 +129,169 @@
       </div>
     </section>
     
+    <style>
+      @keyframes scroll-images {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    
+      .animate-scroll-images {
+        animation: scroll-images 20s linear infinite;
+      }
+    </style>
+    
+   
+    <div class="banner">
+      <div class="marquee-container">
+        <div class="marquee-text">
+          <span class="marquee-word">Innovative community</span>
+          <span class="dash">—</span>
+          <span class="marquee-word">Early Access</span>
+          <span class="dash">—</span>
+          <span class="marquee-word">Tech Class</span>
+          <span class="dash">—</span>
+          <span class="marquee-word"> Exclusive Awards</span>
+          <span class="dash">—</span>
+          <span class="marquee-word">Tours</span>
+          <span class="dash">—</span>
+          <span class="marquee-word">Mentorship</span>
+          <span class="dash">—</span>
+          <span class="marquee-word">Beta Features</span>
+         
+        </div>
+      </div>
+    </div>
+    
+
+   <section class="w-full px-6 md:px-16 py-12 bg-transparent">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-blue-600">Tech-Nest Perks Language Structure for Learning</h2>
+   
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+  
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-html5 text-orange-500 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">HTML</h3>
+    </div>
+
+  
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-css3-alt text-blue-400 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">CSS</h3>
+    </div>
+
+   
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-js-square text-yellow-400 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">JavaScript</h3>
+    </div>
+
+
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-php text-purple-500 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">PHP</h3>
+    </div>
 
     
-  
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-python text-yellow-300 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">Python</h3>
+    </div>
 
+  
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-bootstrap text-purple-600 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">Bootstrap</h3>
+    </div>
+
+ 
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-sass text-pink-500 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">SCSS</h3>
+    </div>
+
+
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fas fa-wind text-cyan-400 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">Tailwind</h3>
+    </div>
+
+ 
+    <div class="bg-white/5 border border-blue-500 rounded-xl p-6 backdrop-blur-md shadow-lg hover:-translate-y-2 hover:rotate-[1deg] hover:scale-105 hover:shadow-blue-500/30 transition transform duration-300 ease-in-out">
+      <i class="fab fa-react text-blue-400 text-4xl mb-3"></i>
+      <h3 class="text-white text-xl font-semibold mb-2">React</h3>
+    </div>
+  </div>
+</section>
+
+<section class="w-full px-6 md:px-16 py-12 bg-transparent">
+  <div class="grid md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+
+    <div class="relative flex justify-center items-center mt-10 group">
+          
+      <img src="/img/Macbook-Air-127.0.0.1.png"
+           alt="Tech-Nest Laptop"
+           class="w-full max-w-2xl h-auto object-contain drop-shadow-2xl z-10 transform transition duration-500 ease-in-out group-hover:rotate-[-2deg] group-hover:scale-105" />
+
+
+      <img src="/img/Galaxy-Tab-S7-127.0.0.1.png"
+           alt="Revealing Image"
+           class="absolute right-8 bottom-6 w-24 md:w-32 object-contain drop-shadow-xl z-20 transform transition duration-500 ease-in-out group-hover:rotate-[6deg] group-hover:translate-x-2 group-hover:scale-110" />
+    </div>
+
+  
+  <div class="text-center md:text-left space-y-6">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+      HI, <span class="text-blue-600">Tech Class,</span> and Mentorship
+    </h1>
+    <div class="max-w-xl md:max-w-lg mx-auto md:mx-0 bg-white/5 border border-blue-600 rounded-xl p-6 backdrop-blur-md transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:rotate-x-6 hover:border-t-transparent hover:shadow-xl">
+      <p class="text-lg text-white leading-relaxed md:leading-loose font-medium text-center md:text-left">
+        <span class="text-blue-400 font-semibold">Tech-Nest</span> is more than a platform — it's a learning ground where aspiring 
+        <span class="text-blue-300">developers</span> and <span class="text-blue-300">creators</span> thrive. Join our hands-on 
+        <span class="text-blue-200 italic">tech classes</span> and mentorship sessions that guide you from the basics to advanced skills in 
+        <span class="text-blue-300">HTML</span>, <span class="text-blue-300">CSS</span>, <span class="text-blue-300">JavaScript</span>, 
+        <span class="text-blue-300">PHP</span>, <span class="text-blue-300">Python</span>, <span class="text-blue-300">Tailwind CSS</span>, 
+        <span class="text-blue-300">SCSS</span>, <span class="text-blue-300">Bootstrap</span>, and <span class="text-blue-300">React</span>. 
+        Build real projects, connect with mentors, and grow into the tech innovator you're meant to be.
+      </p>
+    </div>
+    
+    
+    <button 
+  class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-900 text-white font-semibold rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl active:scale-95"
+  onclick="goToRegister()"
+>
+  Create An Account
+</button>
+
+  </div>
+
+  </div>
+
+  <footer class="relative w-full bg-blue-900 text-white py-8 mt-20 shadow-inner overflow-hidden group transition-all duration-500">
+ 
+    <span class="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-blue-400 transition-all duration-500 pointer-events-none z-0"></span>
+  
+    <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div class="text-center md:text-left transform transition duration-300 group-hover:scale-105">
+        <h3 class="text-2xl font-bold tracking-wide text-blue-100 group-hover:text-white transition">Tech Nest</h3>
+        <p class="text-sm text-blue-300">Empowering the next generation of tech innovators.</p>
+      </div>
+  
+      <div class="text-center md:text-right transform transition duration-300 group-hover:scale-105">
+        <p class="text-sm text-blue-300">&copy; 2025 <span class="font-semibold text-white">Team Tech Nest</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  
   <script src="/scripts/index.js"></script>
  <script src="/scripts/tailwind.js"></script>
   
