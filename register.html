@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register | Tech-Nest</title>
-  <link rel="stylesheet" href="/css/register.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -34,6 +33,14 @@
 </head>
 <body class="min-h-screen flex items-center justify-center px-4 py-10 bg-black/70 text-white">
 
+  <!-- Loader Overlay -->
+  <div x-show="isLoading" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center" x-transition>
+    <svg class="animate-spin h-16 w-16 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l5-5-5-5v4a10 10 0 100 20v-4l-5 5 5 5v-4a8 8 0 01-8-8z"></path>
+    </svg>
+  </div>
+
   <div class="w-full max-w-md glass rounded-3xl p-8 space-y-6 animate-fade-in">
 
     <div class="text-center">
@@ -61,7 +68,7 @@
       </div>
 
       <div class="floating-label relative">
-        <input type="tel" x-model="phone" placeholder=" " required pattern="[0-9]{10}"
+        <input type="tel" x-model="phone" placeholder=" " required 
           class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
         <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">📞 Phone Number</label>
       </div>
@@ -105,7 +112,7 @@
     </p>
   </div>
 
-  <!-- Alpine.js Logic -->
+  <!-- AlpineJS Script Logic -->
   <script>
     function registerForm() {
       return {
@@ -117,20 +124,17 @@
         confirmPassword: '',
         showPassword: false,
         showConfirm: false,
+        isLoading: false,
 
         handleRegister() {
-          if (this.password !== this.confirmPassword) {
-            alert("Passwords do not match ❌");
-            return;
-          }
-
-          alert('Registration successful! 🎉');
-          // Add your backend integration here
-          window.location.href = 'login.html?registered=true';
+          this.isLoading = true;
+          setTimeout(() => {
+            window.location.href = 'verification-page.html';
+          }, 7000);
         },
 
         registerWithGoogle() {
-          alert('Google registration coming soon...');
+          alert('Google registration placeholder');
         }
       };
     }
