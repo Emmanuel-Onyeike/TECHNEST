@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" x-data="registerForm()" x-init>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Tech-Nest</title>
+  <link rel="stylesheet" href="/css/register.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1632066889485-2f3f6b1f94c5?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .floating-label input:focus + label,
+    .floating-label input:not(:placeholder-shown) + label {
+      transform: scale(0.85) translateY(-1.8rem);
+      color: #22d3ee;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4 py-10 bg-black/70 text-white">
+
+  <div class="w-full max-w-md glass rounded-3xl p-8 space-y-6 animate-fade-in">
+
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-cyan-400 mb-1">🧠 Tech-Nest</h1>
+      <p class="text-white/70 text-sm">Join the future of secure smart tech</p>
+    </div>
+
+    <form @submit.prevent="handleRegister" class="space-y-5">
+      <div class="floating-label relative">
+        <input type="text" x-model="firstName" placeholder=" " required 
+          class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
+        <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">👤 First Name</label>
+      </div>
+
+      <div class="floating-label relative">
+        <input type="text" x-model="lastName" placeholder=" " required 
+          class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
+        <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">👥 Last Name</label>
+      </div>
+
+      <div class="floating-label relative">
+        <input type="email" x-model="email" placeholder=" " required 
+          class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
+        <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">📧 Email</label>
+      </div>
+
+      <div class="floating-label relative">
+        <input type="tel" x-model="phone" placeholder=" " required pattern="[0-9]{10}"
+          class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
+        <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">📞 Phone Number</label>
+      </div>
+
+      <div class="floating-label relative">
+        <input :type="showPassword ? 'text' : 'password'" x-model="password" placeholder=" " required 
+          class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
+        <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">🔐 Password</label>
+        <button type="button" @click="showPassword = !showPassword" class="absolute right-3 top-3 text-sm text-cyan-300 hover:text-cyan-400 transition">
+          <span x-text="showPassword ? 'Hide' : 'Show'"></span>
+        </button>
+      </div>
+
+      <div class="floating-label relative">
+        <input :type="showConfirm ? 'text' : 'password'" x-model="confirmPassword" placeholder=" " required 
+          class="peer w-full px-4 py-3 bg-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition placeholder-transparent" />
+        <label class="absolute left-4 top-3 text-white/60 text-sm transition-all duration-200 peer-focus:text-cyan-300">✅ Confirm Password</label>
+        <button type="button" @click="showConfirm = !showConfirm" class="absolute right-3 top-3 text-sm text-cyan-300 hover:text-cyan-400 transition">
+          <span x-text="showConfirm ? 'Hide' : 'Show'"></span>
+        </button>
+      </div>
+
+      <button type="submit" class="w-full py-3 bg-gradient-to-br from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white font-bold rounded-xl shadow-md transition duration-300 transform hover:-translate-y-1 active:scale-95">
+        🚀 Create Account
+      </button>
+
+      <div class="relative text-center text-white/50 text-sm">
+        <span class="bg-black/80 px-2 z-10 relative">or</span>
+        <div class="absolute left-0 top-1/2 w-full h-px bg-white/10"></div>
+      </div>
+
+      <button type="button" @click="registerWithGoogle" class="w-full py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl flex items-center justify-center gap-3 transition">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="h-5 w-5" />
+        Register with Google
+      </button>
+    </form>
+
+    <p class="text-center text-sm text-white/60 mt-4">
+      Already have an account?
+      <a href="login.html" class="text-cyan-400 hover:text-cyan-300 underline">Login here</a>
+    </p>
+  </div>
+
+  <!-- Alpine.js Logic -->
+  <script>
+    function registerForm() {
+      return {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmPassword: '',
+        showPassword: false,
+        showConfirm: false,
+
+        handleRegister() {
+          if (this.password !== this.confirmPassword) {
+            alert("Passwords do not match ❌");
+            return;
+          }
+
+          alert('Registration successful! 🎉');
+          // Add your backend integration here
+          window.location.href = 'login.html?registered=true';
+        },
+
+        registerWithGoogle() {
+          alert('Google registration coming soon...');
+        }
+      };
+    }
+  </script>
+</body>
+</html>
