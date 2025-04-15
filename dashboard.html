@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Tech-Nest</title>
+  <link rel="icon" href="/img/logo.jpeg" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes slide-in {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .slide-in {
+      animation: slide-in 0.5s ease-out forwards;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .show {
+      display: flex;
+    }
+  </style>
+</head>
+<body id="pageBody" class="bg-black text-white min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-700">
+
+
+  <div id="tokenModal" class="absolute inset-0 flex items-center justify-center bg-black/80 z-50">
+    <div class="glass rounded-3xl p-8 text-center max-w-md w-full fade-in-up">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="w-20 h-20 mx-auto mb-4" alt="Token Icon" />
+      <h2 class="text-xl font-semibold text-yellow-400">Token Key Gotten</h2>
+    </div>
+  </div>
+
+  
+  <div id="successModal" class="hidden absolute inset-0 flex items-center justify-center z-50">
+    <div class="glass rounded-3xl p-8 text-center max-w-sm w-full fade-in-up">
+      <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" class="w-16 h-16 mx-auto mb-3" alt="Success Icon" />
+      <p class="text-green-400 font-medium text-lg">Success!</p>
+    </div>
+  </div>
+
+
+  <main id="dashboardContent" class="hidden fade-in-up text-center p-6 w-full">
+    <h1 class="text-3xl font-bold text-cyan-600 mb-2">🧠 Welcome to Tech-Nest Dashboard</h1>
+    <p class="text-gray-700">Manage your smart devices, integrations, and settings from here.</p>
+  
+  </main>
+
+<script src="/scripts/dashboard..js"></script>
+</body>
+</html>

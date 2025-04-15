@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verify Email | Tech-Nest</title>
+  <link rel="icon" href="/img/logo.jpeg" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1632066889485-2f3f6b1f94c5?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
+    }
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .toast-slide {
+      animation: slideIn 0.6s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4 py-12 bg-black/70 text-white relative overflow-hidden">
+
+  
+  <div id="loader" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+    <svg class="animate-spin h-16 w-16 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l5-5-5-5v4a10 10 0 100 20v-4l-5 5 5 5v-4a8 8 0 01-8-8z"></path>
+    </svg>
+  </div>
+
+ 
+  <div id="successModal" class="fixed inset-0 flex items-center justify-center bg-black/70 z-50 hidden">
+    <div class="bg-white text-center p-10 rounded-3xl shadow-2xl max-w-sm w-full space-y-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Success" class="w-20 h-20 mx-auto" />
+      <h2 class="text-2xl font-bold text-green-600">Verification Successful!</h2>
+      <p class="text-gray-600">WELCOME TECH-NESTER...</p>
+    </div>
+  </div>
+
+
+  <div id="toast" class="fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-xl shadow-xl text-sm font-medium hidden">
+    ✅ Verification code resent successfully!
+  </div>
+
+
+  <div class="glass max-w-md w-full p-8 rounded-3xl text-center space-y-6 animate-fade-in z-10">
+    <div class="flex justify-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Verify Icon" class="w-20 h-20" />
+    </div>
+
+    <h1 class="text-3xl font-extrabold text-cyan-400">Verify Your Email</h1>
+    <p class="text-white/70 text-sm leading-relaxed">Enter the 6-digit code sent to your email address.</p>
+
+    <div id="codeInput" class="flex justify-center gap-3 mt-4">
+      <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-xl bg-white/10 text-white focus:ring-2 focus:ring-cyan-400 hover:ring hover:ring-cyan-300 outline-none transition duration-150" />
+      <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-xl bg-white/10 text-white focus:ring-2 focus:ring-cyan-400 hover:ring hover:ring-cyan-300 outline-none transition duration-150" />
+      <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-xl bg-white/10 text-white focus:ring-2 focus:ring-cyan-400 hover:ring hover:ring-cyan-300 outline-none transition duration-150" />
+      <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-xl bg-white/10 text-white focus:ring-2 focus:ring-cyan-400 hover:ring hover:ring-cyan-300 outline-none transition duration-150" />
+      <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-xl bg-white/10 text-white focus:ring-2 focus:ring-cyan-400 hover:ring hover:ring-cyan-300 outline-none transition duration-150" />
+      <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-xl bg-white/10 text-white focus:ring-2 focus:ring-cyan-400 hover:ring hover:ring-cyan-300 outline-none transition duration-150" />
+    </div>
+
+    <button onclick="verifyCode()" class="mt-6 w-full py-3 bg-gradient-to-br from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white font-bold rounded-xl shadow-md transition duration-300 transform hover:-translate-y-1 active:scale-95">
+      ✅ Verify Code
+    </button>
+
+    <div class="mt-6">
+      <p class="text-white/50 text-sm">Didn't receive the email?</p>
+      <button onclick="resendCode()" class="mt-2 px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition">
+        🔄 Resend Verification
+      </button>
+    </div>
+
+    <p class="text-white/30 text-xs pt-6 border-t border-white/10">
+      🧠 Tech-Nest – Building secure smart tech for the future
+    </p>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('#codeInput input');
+    inputs.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        if (input.value.length === 1 && index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && input.value === '' && index > 0) {
+          inputs[index - 1].focus();
+        }
+      });
+    });
+
+    function verifyCode() {
+      document.getElementById('loader').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById('successModal').classList.remove('hidden');
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 3000);
+      }, 7000);
+    }
+
+    function resendCode() {
+      document.getElementById('loader').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+        const toast = document.getElementById('toast');
+        toast.classList.remove('hidden');
+        toast.classList.add('toast-slide');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3000);
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
