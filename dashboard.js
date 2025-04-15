@@ -16,7 +16,7 @@ function resizeCanvas() {
 
 function animateStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'white'; // ✅ White stars for better visibility
+  ctx.fillStyle = 'white'; 
   stars.forEach(star => {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -51,3 +51,24 @@ window.addEventListener('load', () => {
     }, 2000);
   }, 2000);
 });
+
+
+
+  const currentPath = window.location.pathname;
+
+ 
+  if (currentPath.endsWith("/admin") || currentPath.endsWith("dashboard.html/admin")) {
+
+    fetch("/admin.html")
+      .then(response => response.text())
+      .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(error => {
+        console.error("Failed to load admin dashboard:", error);
+        alert("Admin page not found.");
+      });
+  }
+
