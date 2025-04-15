@@ -6,7 +6,29 @@
   <title>Dashboard | Tech-Nest</title>
   <link rel="icon" href="/img/logo.jpeg" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e); 
+      background-size: 400% 400%;
+      animation: bgGradient 15s ease infinite;
+    }
+
+    @keyframes bgGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
     .glass {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
@@ -23,49 +45,112 @@
       animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    @keyframes slide-in {
+    .animate-slide-in-up {
+      animation: slide-in-up 0.4s ease-out forwards;
+    }
+
+    @keyframes slide-in-up {
       from { transform: translateY(50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
-
-    .slide-in {
-      animation: slide-in 0.5s ease-out forwards;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .show {
-      display: flex;
-    }
   </style>
 </head>
-<body id="pageBody" class="bg-black text-white min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-700">
+<body class="text-white min-h-screen flex flex-col">
 
 
-  <div id="tokenModal" class="absolute inset-0 flex items-center justify-center bg-black/80 z-50">
+  <canvas id="starfield"></canvas>
+
+  <div id="tokenModal" class="fixed inset-0 flex items-center justify-center bg-black/80 z-50">
     <div class="glass rounded-3xl p-8 text-center max-w-md w-full fade-in-up">
-      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="w-20 h-20 mx-auto mb-4" alt="Token Icon" />
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" class="w-20 h-20 mx-auto mb-4" alt="Key Icon" />
       <h2 class="text-xl font-semibold text-yellow-400">Token Key Gotten</h2>
     </div>
   </div>
 
-  
-  <div id="successModal" class="hidden absolute inset-0 flex items-center justify-center z-50">
+
+  <div id="successModal" class="hidden fixed inset-0 flex items-center justify-center z-50">
     <div class="glass rounded-3xl p-8 text-center max-w-sm w-full fade-in-up">
       <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" class="w-16 h-16 mx-auto mb-3" alt="Success Icon" />
       <p class="text-green-400 font-medium text-lg">Success!</p>
     </div>
   </div>
 
-
-  <main id="dashboardContent" class="hidden fade-in-up text-center p-6 w-full">
-    <h1 class="text-3xl font-bold text-cyan-600 mb-2">🧠 Welcome to Tech-Nest Dashboard</h1>
-    <p class="text-gray-700">Manage your smart devices, integrations, and settings from here.</p>
   
+  <div class="px-4 pt-6 md:px-6 z-10 relative">
+    <header class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <img src="/img/logo.jpeg" alt="Tech-Nest Logo" class="w-10 h-10 rounded-full object-cover" />
+        <span class="text-cyan-400 font-bold text-lg hidden md:inline">Tech-Nest</span>
+      </div>
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-cyan-400 text-3xl focus:outline-none">&#9776;</button>
+      </div>
+    </header>
+  </div>
+
+  <div id="mobileMenuModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+    <div class="bg-gradient-to-br from-white/10 to-cyan-500/10 backdrop-blur-2xl w-11/12 max-w-sm rounded-3xl p-6 shadow-xl relative animate-slide-in-up border border-white/10">
+      <button id="closeModal" class="absolute top-4 right-4 text-white hover:text-red-500 text-2xl">&times;</button>
+      <div class="mt-8 space-y-4">
+  
+      
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          Dashboard
+        </button>
+  
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+          Classes
+        </button>
+  
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+          Features
+        </button>
+  
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          Settings
+        </button>
+  
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="bell" class="w-5 h-5"></i>
+          Notifications
+        </button>
+  
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="awards" class="w-5 h-5"></i>
+          Awards
+        </button>
+
+
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/80 hover:bg-cyan-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="awards" class="w-5 h-5"></i>
+          Awards
+        </button>
+  
+        <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/80 hover:bg-red-600 transition-all text-white font-medium shadow-md">
+          <i data-lucide="log-out" class="w-5 h-5"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+  
+  <main id="dashboardContent" class="hidden fade-in-up text-center p-6 w-full mt-8 z-10 relative">
+    <h1 class="text-3xl font-bold text-cyan-400 mb-2">🧠 Welcome to Tech-Nest Dashboard</h1>
+    <p class="text-gray-300">Manage your smart devices, integrations, and settings from here.</p>
   </main>
 
-<script src="/scripts/dashboard..js"></script>
+
+  
+  <script src="/scripts/dashboard.js"></script>
 </body>
 </html>

@@ -63,13 +63,21 @@
 
   
       <button 
-        type="submit"
-        class="w-full py-3 bg-gradient-to-tr from-blue-700 to-blue-400 hover:from-blue-700 hover:to-blue-2  00 text-white font-bold rounded-xl shadow-xl transition duration-300 transform hover:-translate-y-1 active:scale-95"
-      >
-        🚪 Sign In
-      </button>
+      type="button"
+      onclick="handleSignIn()"
+      class="w-full py-3 bg-gradient-to-tr from-blue-700 to-blue-400 hover:from-blue-700 hover:to-blue-200 text-white font-bold rounded-xl shadow-xl transition duration-300 transform hover:-translate-y-1 active:scale-95"
+    >
+      🚪 Sign In
+    </button>
+    
     </form>
 
+<div id="loadingOverlay" class="fixed inset-0 bg-white/80 z-50 flex items-center justify-center hidden">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
   
     <div class="flex items-center my-6">
       <hr class="flex-grow border-white/30" />
@@ -84,5 +92,6 @@
     </p>
   </div>
 
+  <script src="/scripts/login.js"></script>
 </body>
 </html>

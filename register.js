@@ -1,27 +1,25 @@
-function registerForm() {
-  return {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: '',
-    showPassword: false,
-    showConfirm: false,
 
-    handleRegister() {
-      if (this.password !== this.confirmPassword) {
-        alert("Passwords do not match ❌");
-        return;
-      }
+    function registerForm() {
+      return {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmPassword: '',
+        showPassword: false,
+        showConfirm: false,
+        isLoading: false,
 
-      alert('Registration successful! 🎉');
-    
-      window.location.href = 'login.html?registered=true';
-    },
+        handleRegister() {
+          this.isLoading = true;
+          setTimeout(() => {
+            window.location.href = 'verification-page.html';
+          }, 7000);
+        },
 
-    registerWithGoogle() {
-      alert('Google registration coming soon...');
+        registerWithGoogle() {
+          alert('Google registration placeholder');
+        }
+      };
     }
-  };
-}
