@@ -12,7 +12,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/php/logout.php">
      <link rel="stylesheet" href="/css/activities.css">
-    <title>TECH-NEST</title>
+    <title>pricing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -1435,70 +1437,448 @@ video {
                 </li>
             </ul>
         </div>
-     
+     <style>
+      .completion-message {
+    font-size: 20px; /* Slightly larger font for readability */
+    font-style: italic;
+    font-weight: bold; /* Make the text stand out more */
+    color: #FF6347; /* A nice shade of red for emphasis */
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 20px; /* Add some padding for better spacing */
+    background-color: rgba(255, 99, 71, 0.1); /* Light red background to make the text pop */
+    border-left: 4px solid #FF6347; /* Add a border on the left to match the text color */
+    transform: skew(-10deg); /* Slant the text for effect */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Add hover effect for a more interactive feel */
+.completion-message:hover {
+    color: #FF6347;
+    background-color:transparent; /* Change background color on hover */
+    border-color: #FFFFFF; /* Change the border color to white on hover */
+    transform: skew(-10deg) scale(1.05); /* Slightly increase the size on hover for a pop effect */
+}
+
+      </style>
         <div class="p-6 bg-gray-100 min-h-screen flex flex-col items-center justify-center">
-          <!-- Header Card -->
-          <div class="bg-white rounded-xl p-8 max-w-2xl w-full text-center shadow-md transition transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-            <h1 class="text-4xl font-extrabold">
-              <span class="text-blue-800">FEAT</span><span class="text-gray-800">URES</span>
-            </h1>
-          </div>
-        
-          <!-- Features Section -->
-          <section class="mt-10 w-full max-w-4xl bg-white p-8 rounded-2xl shadow-xl">
-            <h2 class="text-2xl font-bold text-blue-700 mb-6 text-center">🚀 Welcome to Technest Features</h2>
-        
-            <!-- Feature List as Grid Cards -->
-            <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-              <div class="bg-blue-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Chat Features:</strong> Stay connected with friends and teammates.</p>
+            
+            <div class="bg-white rounded-xl p-8 max-w-2xl w-full text-center shadow-md transition transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+              <h1 class="text-4xl font-extrabold">
+                <span class="text-blue-800">PRIC</span><span class="text-gray-800">ING</span>
+              </h1>
+              <p class="text-gray-600 mt-2">Choose the plan that fits your needs.</p>
+              <p class="completion-message">
+                <i class="fas fa-info-circle text-red-600 mr-2"></i>
+                Please scroll down to explore the details of each plan and its features before making a payment.
+</p>
+              
+            </div>
+            <div class="p-4">
+              <div class="max-w-md mx-auto mt-10 px-6 py-8 bg-white shadow-lg rounded-lg">
+                <label for="countryInput" class="block text-lg font-semibold text-gray-800 mb-3">
+                  Enter your country
+                </label>
+                <input
+                  id="countryInput"
+                  type="text"
+                  placeholder="e.g. Nigeria"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-900 transition duration-200"
+                />
+              
+                <p id="paymentNote" class="mt-4 px-4 py-3 rounded-md text-sm font-medium text-blue-200 bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 shadow-md hidden">
+                  💡 Pricing shown in your local currency based on your country.
+                </p>
+                
+                <!-- Loading Indicator -->
+                <div id="loading" class="mt-6 flex flex-col items-center gap-3 hidden">
+                  <!-- Enhanced Spinner -->
+                  <span class="w-6 h-6 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></span>
+                  
+                  <!-- Enhanced Message -->
+                  <p class="text-base font-semibold text-gray-300 tracking-wide">
+                    Checking your location and pricing...
+                  </p>
+                </div>
               </div>
-              <div class="bg-green-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Post Features:</strong> Share updates, ideas, and moments with the community.</p>
-              </div>
-              <div class="bg-pink-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Adding Friends:</strong> Build your network easily within the platform.</p>
-              </div>
-              <div class="bg-indigo-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Interact Worldwide:</strong> Connect with users globally for collaboration.</p>
-              </div>
-              <div class="bg-yellow-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Cook Up Activities:</strong> Collaborate on projects and activities with your own team.</p>
-              </div>
-              <div class="bg-purple-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>100 Days Validation:</strong> A reward system that unlocks features through consistent effort.</p>
-              </div>
-              <div class="bg-green-100 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Free Points:</strong> Earn free points upon your first registration.</p>
-              </div>
-              <div class="bg-red-100 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Purchase Points:</strong> Buy points to skip validation steps or update your profile.</p>
-              </div>
-              <div class="bg-teal-100 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Upcoming Profile Update:</strong> Stay tuned for profile customization features.</p>
-              </div>
-              <div class="bg-orange-100 p-4 rounded-lg shadow hover:shadow-lg transition">
-                <p><strong>Class Participation:</strong> Gain rewards through active participation in learning activities.</p>
+              
+              <!-- Plan Grid (Hidden by default) -->
+              <div id="plansGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+          
+             <!-- Plan 1 -->
+<div class="plan-card text-white">
+  <h3 class="text-xl font-semibold mb-2">Plan 1</h3>
+  <p class="mb-4 text-green-500">Enhanced Features</p>
+  <h3 class="text-2xl font-bold" id="price1">$0</h3> 
+  <p class="text-green-500" id="currency1">Per month</p>
+  <ul class="mt-4 space-y-2 text-sm font-medium">
+    <li>✅ 20 days skip validation</li>
+    <li>✅ 50 message characters</li>
+    <li>✅ 10 Friends search </li> 
+    <li>✅ 10 post per month</li> 
+    <li>✅ Ads free</li>
+        <li>✅ Tech-nest pro plus</li>
+  </ul>
+  <button class="mt-6 w-full px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200 flex items-center justify-center">
+    <i class="fas fa-shopping-cart mr-2"></i> <!-- Shopping cart icon -->
+    Purchase
+  </button>
+</div>
+
+          
+                <!-- Plan 2 -->
+                <div class="plan-card text-white">
+                  <h3 class="text-xl font-semibold mb-2">Plan 2</h3>
+                  <p class="text-green-500 mb-4">Enhanced Features</p>
+                  <h3 class="text-2xl font-bold" id="price2">$0</h3>
+                  <p class="text-green-500" id="currency2">Per month</p>
+                  <ul class="mt-4 space-y-2 text-sm font-medium">
+                    <li>✅ 30 days skip validation</li> <!-- Increased skip validation -->
+                          <li>✅ 250 message characters</li> <!-- Slightly higher message character limit -->
+                          <li>✅ 20 posts per month</li> <!-- Increased posts -->
+                          <li>✅ 20 friends search</li> <!-- Added friends search -->
+                           <li>✅ Basic security ehancement</li>
+                             <li>✅ Tech-nest pro plus 1</li>   
+                  </ul>
+                  <button class="mt-6 w-full px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> <!-- Shopping cart icon -->
+                    Purchase
+                  </button>
+                </div>
+          
+                <!-- Plan 3 -->
+                <div class="plan-card text-white">
+                  <h3 class="text-xl font-semibold mb-2">Plan 3</h3>
+                  <p class="text-green-500 mb-4">Enhanced Features</p>
+                  <h3 class="text-2xl font-bold" id="price3">$0</h3>
+                  <p class="text-green-500" id="currency3">Per month</p>
+                  <ul class="mt-4 space-y-2 text-sm font-medium">
+                    <li>✅ 50 days skip validation</li> 
+                    <li>✅ 300 message characters</li> 
+                    <li>✅ 50 posts per month</li> 
+                    <li>✅ 30 friends search</li> 
+                    <li>✅ Semi-basic security features</li> 
+                    <li>✅ Tech-nest pro plus 2</li> 
+                  </ul>
+                  <button class="mt-6 w-full px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> <!-- Shopping cart icon -->
+                    Purchase
+                  </button>
+                </div>
+          
+                <!-- Plan 4 -->
+                <div class="plan-card text-white">
+                  <h3 class="text-xl font-semibold mb-2">Plan 4</h3>
+                  <p class="text-green-500 mb-4">Enhanced Features</p>
+                  <h3 class="text-2xl font-bold" id="price4">$0</h3>
+                  <p class="text-green-500" id="currency4">6 months</p>
+                  <ul class="mt-4 space-y-2 text-sm font-medium">
+                    <li>✅ 65 days skip validation</li> <!-- Extended skip validation period -->
+                      <li>✅ 400 message characters</li> <!-- Larger character limit for messages -->
+                       <li>✅ 50 posts per month</li> <!-- Generous post allowance -->
+                      <li>✅ 30 friends search functionality</li> <!-- Increased friends search -->
+                      <li>✅ Double-lock security</li> <!-- Enhanced security for business/pro users -->
+                         <li>✅ Tech-nest inner pack</li> <!-- Inner, more advanced version of Tech-nest tools -->
+                       </ul> 
+                  <button class="mt-6 w-full px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> <!-- Shopping cart icon -->
+                    Purchase
+                  </button>
+                </div>
+          
+                <!-- Plan 5 -->
+                <div class="plan-card text-white">
+                  <h3 class="text-xl font-semibold mb-2">Plan 5</h3>
+                  <p class="text-green-500 mb-4">Enhanced Features</p>
+                  <h3 class="text-2xl font-bold" id="price5">$25</h3>
+                  <p class="text-green-500" id="currency5">7 months</p>
+                  <ul class="mt-4 space-y-2 text-sm font-medium">
+                    <li>✅ 100 days skip validation</li> <!-- Generous skip validation time -->
+                    <li>✅ Unlimited message characters</li> <!-- Unlimited characters in messages -->
+                    <li>✅ Unlimited posts</li> <!-- No limit on posts -->
+                    <li>✅ Unlimited friends search</li> <!-- No limit on friends search -->
+                    <li>✅ Enhanced security</li> <!-- Advanced security features for users -->
+                    <li>✅ Tech-nest v2</li> <!-- Latest version of Tech-nest tools for power users -->
+                  </ul>
+                  <button class="mt-6 w-full px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> <!-- Shopping cart icon -->
+                    Purchase
+                  </button>
+                </div>
+          
+                <!-- Plan 6 -->
+                <div class="plan-card text-white">
+                  <h3 class="text-xl font-semibold mb-2">Plan 6</h3>
+                  <p class="text-green-500 mb-4">Enhanced Features</p>
+                  <h3 class="text-2xl font-bold" id="price6">$25</h3>
+                  <p class="text-green-500" id="currency6"> 1 year</p>
+                  <ul class="mt-4 space-y-2 text-sm font-medium">
+                    <li>✅ 100 days skip validation</li>
+                    <li>✅ Unlimited message characters</li>
+                    <li>✅ Longer posts</li>
+                    <li>✅ Reply boost</li>
+                    <li>✅ Unlimited friends search</li>
+                    <li>✅ Enhanced security</li>
+                    <li>✅ Profile Verification</li>
+                    <li>✅ Tech-nest Pro Plus vv2: Advanced tools and premium resources for professionals, including custom API access, analytics dashboards, priority customer support, and exclusive features designed to accelerate growth and productivity.</li>
+                  </ul>
+                  <button class="mt-6 w-full px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> <!-- Shopping cart icon -->
+                    Purchase
+                  </button>
+                </div>
+          
               </div>
             </div>
-        
-            <!-- Notes Section -->
-            <div class="mt-10 bg-gray-50 p-6 rounded-xl border border-red-100">
-              <h3 class="text-red-600 text-lg font-bold mb-3">⚠️ Important Notes</h3>
-              <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
-                <li>Points cannot be used to pass or skip failed academic courses.</li>
-                <li>All failed courses must be re-written to progress to the next semester.</li>
-                <li>Points only apply to external comfort and profile features.</li>
-                <li>Validation is a separate academic requirement and cannot be bypassed by points.</li>
-                <li>Misuse of point-related features may result in suspension or reset of your account’s privileges.</li>
-                <li>Participation in team activities may contribute to your eligibility for exclusive programs.</li>
-                <li>Profiles found inactive for over 60 days may be marked as dormant and require reactivation.</li>
-                <li>Your feedback helps shape Technest — feature suggestions are welcome anytime!</li>
-              </ul>
-            </div>
-          </section>
+          
+            <!-- Custom Styles -->
+            <style>
+              .plan-card {
+                border: 4px solid white;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                background: linear-gradient(to right, #111827, #1e3a8a);
+                transition: all 0.3s ease;
+              }
+          
+              .plan-card:hover {
+                transform: scale(1.05);
+                background: linear-gradient(to right, #1e3a8a, #111827);
+              }
+            </style>
+          
+            <!-- Script for Country + Dynamic Currency -->
+            <script>
+              const countryInput = document.getElementById('countryInput');
+              const paymentNote = document.getElementById('paymentNote');
+              const plansGrid = document.getElementById('plansGrid');
+              const loading = document.getElementById('loading');
+          
+              const currencyMap = {
+  nigeria: { symbol: '₦', price: '10,000', currency: 'Naira' },
+  usa: { symbol: '$', price: '25', currency: 'USD' },
+  uk: { symbol: '£', price: '20', currency: 'Pound' },
+  canada: { symbol: 'CA$', price: '30', currency: 'CAD' },
+  italy: { symbol: '€', price: '22', currency: 'Euro' },
+  india: { symbol: '₹', price: '2000', currency: 'INR' },
+  germany: { symbol: '€', price: '22', currency: 'Euro' },
+  france: { symbol: '€', price: '22', currency: 'Euro' },
+  spain: { symbol: '€', price: '22', currency: 'Euro' },
+  australia: { symbol: 'A$', price: '30', currency: 'AUD' },
+  japan: { symbol: '¥', price: '2500', currency: 'JPY' },
+  southafrica: { symbol: 'R', price: '450', currency: 'ZAR' }
+};
+          
+              let typingTimeout;
+          
+              countryInput.addEventListener('input', () => {
+                clearTimeout(typingTimeout);
+                paymentNote.classList.add('hidden');
+                plansGrid.classList.add('hidden');
+                loading.classList.remove('hidden');
+          
+                typingTimeout = setTimeout(() => {
+                  const userCountry = countryInput.value.trim().toLowerCase().replace(/\s/g, '');
+                  if (!userCountry) {
+                    loading.classList.add('hidden');
+                    return;
+                  }
+          
+                  const data = currencyMap[userCountry] || { symbol: '$', price: '25', currency: 'USD' };
+
+// Plan tier names
+const planNames = ['Starter', 'Essentials', 'Pro', 'Growth', 'Ultimate', 'Premium Plus'];
+
+if (userCountry === 'nigeria') {
+  const nigeriaPrices = ['10,000', '20,000', '30,000', '40,000', '50,000', '60,000'];
+  for (let i = 1; i <= 6; i++) {
+    const priceEl = document.getElementById(`price${i}`);
+    const currencyEl = document.getElementById(`currency${i}`);
+    const titleEl = priceEl.closest('.plan-card').querySelector('h3');
+    const planNames = ["Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5", "Plan 6"]; 
+    const planDurations = [1, 2, 4, 6, 6, 12]; 
+
+  
+    if (priceEl && currencyEl && titleEl) {
+    // Calculate the final price depending on the duration
+    const finalPrice = nigeriaPrices[i] * planDurations[i];
+
+    priceEl.innerText = `₦${finalPrice}`; // Adjusted price for the duration
+    currencyEl.innerText = `Per ${planDurations[i]} month(s) (Naira)`; // Show the duration
+    titleEl.innerText = planNames[i]; // Set the plan name
+  }
+}
+} 
+
+else {
+  const base = parseFloat(data.price.replace(/,/g, ''));
+  for (let i = 1; i <= 6; i++) {
+    const priceTier = (base * i * 1.2).toFixed(2);
+    const priceEl = document.getElementById(`price${i}`);
+    const currencyEl = document.getElementById(`currency${i}`);
+    const titleEl = priceEl.closest('.plan-card').querySelector('h3');
+
+    if (priceEl && currencyEl && titleEl) {
+      priceEl.innerText = `${data.symbol}${priceTier}`;
+      currencyEl.innerText = ` (${data.currency})`;
+      titleEl.innerText = planNames[i - 1];
+    }
+  }
+}
+
+          
+                  loading.classList.add('hidden');
+                  paymentNote.classList.remove('hidden');
+                  plansGrid.classList.remove('hidden');
+                }, 5000); // Simulated 5-second load
+              });
+            </script>
+                      </div>
+                      
+                  </div>
+                </div>
+              </div>
         </div>
-        
+         
+        <!-- How It Works Container -->
+        <div class="max-w-6xl mx-auto mt-12 px-6 py-8 bg-dark-blue shadow-lg rounded-lg border-4 border-gray-700">
+          <h2 class="text-3xl font-extrabold text-center text-dark-blue mb-6">
+    How It Works: Plan Durations & Benefits
+  </h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Plan Duration Info 1 -->
+    <div class="feature-card p-6 bg-white rounded-lg shadow-md">
+      <div class="flex justify-center mb-4">
+        <span class="text-4xl">⏳</span>
+      </div>
+      <h3 class="text-xl font-semibold text-center text-gray-800"><strong>Plan 1: 1 Month</strong></h3>
+      <p class="text-center text-gray-600 mt-2">
+        Ideal for those who want a quick test or short-term access to basic features. 
+        <strong>Duration:</strong> 1 month, with a limited set of features.
+      </p>
+    </div>
+
+    <!-- Plan Duration Info 2 -->
+    <div class="feature-card p-6 bg-white rounded-lg shadow-md">
+      <div class="flex justify-center mb-4">
+        <span class="text-4xl">🔒</span> 
+      </div>
+      <h3 class="text-xl font-semibold text-center text-gray-800"><strong>Plan 2: 2 Months</strong></h3>
+      <p class="text-center text-gray-600 mt-2">
+        For users looking for a bit more time to explore enhanced features. 
+        <strong>Duration:</strong> 2 months with additional features like friends search and higher message limits.
+      </p>
+    </div>
+
+    <!-- Plan Duration Info 3 -->
+    <div class="feature-card p-6 bg-white rounded-lg shadow-md">
+      <div class="flex justify-center mb-4">
+        <span class="text-4xl">🚀</span> 
+      </div>
+      <h3 class="text-xl font-semibold text-center text-gray-800"><strong>Plan 3: 4 Months</strong></h3>
+      <p class="text-center text-gray-600 mt-2">
+        Perfect for users who need more time to grow with semi-advanced features, including extended validation and security.
+        <strong>Duration:</strong> 4 months with generous posts and character limits.
+      </p>
+    </div>
+
+    <!-- Plan Duration Info 4 -->
+    <div class="feature-card p-6 bg-white rounded-lg shadow-md">
+      <div class="flex justify-center mb-4">
+        <span class="text-4xl">🔑</span>
+      </div>
+      <h3 class="text-xl font-semibold text-center text-gray-800"><strong>Plan 4: 6 Months</strong></h3>
+      <p class="text-center text-gray-600 mt-2">
+        Tailored for users who require long-term access and enhanced features like double-lock security and advanced tools.
+        <strong>Duration:</strong> 6 months, with larger message characters and posts.
+      </p>
+    </div>
+
+    <!-- Plan Duration Info 5 -->
+    <div class="feature-card p-6 bg-white rounded-lg shadow-md">
+      <div class="flex justify-center mb-4">
+        <span class="text-4xl">💎</span> 
+      </div>
+      <h3 class="text-xl font-semibold text-center text-gray-800"><strong>Plan 5: 7 Months</strong></h3>
+      <p class="text-center text-gray-600 mt-2">
+        For serious users looking for premium access with unlimited features. 
+        <strong>Duration:</strong> 7 months with advanced capabilities such as unlimited posts and character limits.
+      </p>
+    </div>
+
+    <!-- Plan Duration Info 6 -->
+    <div class="feature-card p-6 bg-white rounded-lg shadow-md">
+      <div class="flex justify-center mb-4">
+        <span class="text-4xl">🌟</span>
+      </div>
+      <h3 class="text-xl font-semibold text-center text-gray-800"><strong>Plan 6: 1 Year</strong></h3>
+      <p class="text-center text-gray-600 mt-2">
+        The highest-tier plan for professionals with access to all features for a full year. Includes exclusive Tech-Nest Pro resources and API access.
+        <strong>Duration:</strong> 12 months with the ultimate package.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center">
+    <p id="autoTyping" class="text-gray-600 text-lg font-medium"></p>
+  </div>
+  
+  <style>
+    /* Styling for the typing effect */
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  
+    #autoTyping {
+      font-size: 18px;
+      font-family: 'Courier New', Courier, monospace; /* Monospace for typing effect */
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid transparent;
+      animation: typing 6s steps(60) 1s infinite normal both, blink 0.75s step-end infinite;
+    }
+  
+    /* Cursor blink effect */
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+  
+  <script>
+    const text = "Choose the best deal..";
+  
+    const textElement = document.getElementById('autoTyping');
+    let currentText = '';
+    let index = 0;
+  
+    function type() {
+      if (index < text.length) {
+        currentText += text[index];
+        textElement.innerText = currentText;
+        index++;
+      } else {
+        // Pause for 1 second before restarting the text
+        setTimeout(() => {
+          index = 0;
+          currentText = '';
+        }, 20000); // 1000ms = 1 second pause at the end before restart
+      }
+    }
+  
+    // Type every 100ms
+    setInterval(type, 100);
+  </script>
+  
+</div>
+
           <script>
             function showContent(tab) {
               // Remove active styling
@@ -1716,7 +2096,7 @@ video {
         
     </script>
   
-  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="/scripts/dashabord 2.js"></script>
     
 </body>
