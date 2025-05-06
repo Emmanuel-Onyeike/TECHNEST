@@ -4,7 +4,7 @@
     overlay.classList.remove('hidden');
 
     setTimeout(() => {
-      window.location.href = "dashboard.html"; 
+      window.location.href = "/html/dashboard.html"; 
     }, 5000); 
   }
 

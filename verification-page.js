@@ -19,7 +19,7 @@ function verifyCode() {
     document.getElementById('loader').classList.add('hidden');
     document.getElementById('successModal').classList.remove('hidden');
     setTimeout(() => {
-      window.location.href = 'dashboard.html';
+      window.location.href = '/html/dashboard.html';
     }, 3000);
   }, 7000);
 }
