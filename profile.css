@@ -1,0 +1,165 @@
+Styles (for Desktop) */
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+
+  .profile-page {
+    background-color: #f8fafc;
+  }
+
+  .bg-blueGray-200 {
+    background-color: #e1e8f0;
+  }
+
+  .bg-white {
+    background-color: #ffffff;
+  }
+
+  .text-blueGray-600 {
+    color: #4a5568;
+  }
+
+  .text-blueGray-400 {
+    color: #cbd5e0;
+  }
+
+  .text-blueGray-700 {
+    color: #2d3748;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 767px) {
+    /* Adjust Profile Section */
+    .profile-page {
+      padding-top: 70px;
+    }
+
+    #backgroundSection {
+      background-position: center center;
+      height: 250px;
+    }
+
+    .top-auto {
+      display: none;
+    }
+
+    /* Profile Image */
+    #profileImage {
+      width: 120px;
+      height: 120px;
+      -webkit-mask-image: none;
+      mask-image: none;
+      position: relative;
+      margin-left: 0;
+      margin-top: -50px;
+    }
+
+    /* Modal */
+    #profileModal {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Profile Info Section */
+    .w-full {
+      width: 100%;
+    }
+
+    /* Buttons */
+    .follower-count,
+    .bg-gradient-to-r {
+      width: 100%;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .bg-gradient-to-r {
+      font-size: 14px;
+    }
+
+    /* Text Content */
+    #displayName {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    #displayLocation, #displayJob, #displaySchool {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    #displayBio {
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+
+    .follow-btn, .edit-btn, .unfollow-btn {
+      font-size: 12px;
+      padding: 10px 20px;
+      margin-top: 5px;
+    }
+
+    .follow-btn i,
+    .edit-btn i,
+    .unfollow-btn i {
+      margin-right: 8px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .px-4 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .py-4 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  /* Mobile Portrait */
+  @media (max-width: 480px) {
+    #profileImage {
+      width: 100px;
+      height: 100px;
+    }
+
+    #displayName {
+      font-size: 1.5rem;
+    }
+
+    .text-lg {
+      font-size: 14px;
+    }
+
+    .text-sm {
+      font-size: 12px;
+    }
+
+    .bg-gradient-to-r {
+      font-size: 12px;
+    }
+
+    .py-10 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    /* Modal */
+    #modalContent {
+      padding: 10px;
+    }
+
+    /* Adjust Section Padding */
+    .py-16 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+

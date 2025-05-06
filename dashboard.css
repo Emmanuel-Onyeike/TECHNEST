@@ -1,0 +1,8 @@
+/* Optional: For smooth modal transition */
+#profileModal {
+  transform: translateX(100%); /* Initially hidden */
+}
+
+#profileModal.open {
+  transform: translateX(0); /* Slide in */
+}
